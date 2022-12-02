@@ -8,33 +8,28 @@ int part_two(FILE *fp);
 int main(void) {
   FILE *fp;
 
+  // Question 1
   fp = fopen("input.txt", "r");
-
-  if (fp == NULL) {
-    return -1;
-  }
 
   int answer_one = part_one(fp);
 
   fclose(fp);
 
+  // Question 2
   fp = fopen("input.txt", "r");
-
-  if (fp == NULL) {
-    return -1;
-  }
 
   int answer_two = part_two(fp);
 
-  printf("Answer one: %d\nAnswer two: %d\n", answer_one, answer_two);
-
   fclose(fp);
+
+  // Print answers
+  printf("Answer one: %d\nAnswer two: %d\n", answer_one, answer_two);
 
   return 0;
 }
 
 int part_one(FILE *fp) {
-  char * line = NULL;
+  char *line = NULL;
   size_t len = 0;
   ssize_t read;
 
@@ -61,7 +56,7 @@ int part_one(FILE *fp) {
 }
 
 int part_two(FILE *fp) {
-  char * line = NULL;
+  char *line = NULL;
   size_t len = 0;
   ssize_t read;
 
@@ -81,7 +76,7 @@ int part_two(FILE *fp) {
         sums[0] = temp_count;
       }
 
-      // sort array
+      // Sort array
       for (int i = 0; i < n; ++i){
         for (int j = i + 1; j < n; ++j){
           if (sums[i] > sums[j]){
